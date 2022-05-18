@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OldStore.Backend.Models.Enums
+namespace OldStore.Shared.Enums
 {
     public enum GameGenre
     {

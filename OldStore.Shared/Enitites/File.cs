@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OldStore.Backend.Models.Entities
+namespace OldStore.Shared.Enitites
 {
     public class File
     {

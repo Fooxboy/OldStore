@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OldStore.Client
+namespace OldStore.Client.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для CompactGameControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CompactGameControl : UserControl
     {
-        public MainWindow()
+        public CompactGameControl()
         {
             InitializeComponent();
         }

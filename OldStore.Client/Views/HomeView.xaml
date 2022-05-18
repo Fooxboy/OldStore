@@ -1,0 +1,52 @@
+﻿<Page x:Class="OldStore.Client.Views.HomeView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OldStore.Client.Views"
+      xmlns:wpfui="clr-namespace:WPFUI.Controls;assembly=WPFUI"
+      
+      xmlns:controls="clr-namespace:OldStore.Client.Controls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="HomeView">
+
+    <Grid Margin="0 30 0 0">
+
+        <Grid.Resources>
+
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/WPFUI;component/Styles/Theme/Light.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/WPFUI;component/Styles/WPFUI.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+
+        </Grid.Resources>
+        <wpfui:DynamicScrollViewer>
+            <StackPanel>
+                <controls:BigBannerControl x:Name="Banners"/>
+
+                <Grid Margin="0 0 0 0">
+                   
+                    <TextBlock  FontSize="30" FontFamily="Segoe UI"  Text="Недавно запущенные игры" FontWeight="Bold"/>
+                    <wpfui:Button Appearance="Transparent" HorizontalAlignment="Right" Margin="0 0 20 0" Content="Открыть библиотеку"/>
+                </Grid>
+
+                <StackPanel Margin="0 15 0 0" x:Name="MyGames" Orientation="Horizontal">
+                    <controls:CompactGameControl/>
+                    <controls:CompactGameControl Margin="10 0 0 0"/>
+                    <controls:CompactGameControl Margin="10 0 0 0"/>
+                </StackPanel>
+
+
+                <TextBlock Margin="0 20 0 0" FontSize="30" FontFamily="Segoe UI" Text="Популярные игры" FontWeight="Bold"/>
+
+                <StackPanel Margin="0 5 0 0" x:Name="TopGames" Orientation="Horizontal">
+
+                </StackPanel>
+            </StackPanel>
+        </wpfui:DynamicScrollViewer>
+        
+    </Grid>
+</Page>

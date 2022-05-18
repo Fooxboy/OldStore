@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Backend", "OldStor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Client", "OldStore.Client\OldStore.Client.csproj", "{05ECA5FC-2A50-42CF-A375-792EE11858B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Shared", "OldStore.Shared\OldStore.Shared.csproj", "{2CF0EE42-DB44-4ADD-BEED-856C5D477E15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{05ECA5FC-2A50-42CF-A375-792EE11858B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05ECA5FC-2A50-42CF-A375-792EE11858B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05ECA5FC-2A50-42CF-A375-792EE11858B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CF0EE42-DB44-4ADD-BEED-856C5D477E15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CF0EE42-DB44-4ADD-BEED-856C5D477E15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CF0EE42-DB44-4ADD-BEED-856C5D477E15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CF0EE42-DB44-4ADD-BEED-856C5D477E15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

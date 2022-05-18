@@ -2,6 +2,8 @@
 using OldStore.Backend.Databases;
 using OldStore.Backend.Models.Entities;
 using OldStore.Backend.Models.Enums;
+using OldStore.Shared.Enitites;
+using OldStore.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,6 @@ namespace OldStore.Backend.Managers
 {
     public class GamesManager
     {
-
         private readonly StoreDatabaseContext db;
 
         public GamesManager(StoreDatabaseContext db)

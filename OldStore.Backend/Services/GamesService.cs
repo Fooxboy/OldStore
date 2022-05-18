@@ -2,6 +2,8 @@
 using OldStore.Backend.Managers;
 using OldStore.Backend.Models.Entities;
 using OldStore.Backend.Models.Enums;
+using OldStore.Shared.Enitites;
+using OldStore.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

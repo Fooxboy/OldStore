@@ -26,23 +26,26 @@ var app = builder.Build();
 app.Urls.Add("http://0.0.0.0:5000");
 app.Urls.Add("https://0.0.0.0:5001");
 
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+app.UseCors(builder =>
+   builder
+   //.AllowAnyOrigin()
+   .WithOrigins("http://0.0.0.0:5000")
+   .WithOrigins("http://0.0.0.0:5001")
+   .WithOrigins("http://0.0.0.0:3000")
+   .WithOrigins("http://0.0.0.0")
+   .AllowAnyMethod()
+   .AllowAnyHeader()
+   .AllowCredentials()
+   );
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-
-    app.UseCors(builder =>
-       builder
-       //.AllowAnyOrigin()
-       .WithOrigins("http://0.0.0.0:5000")
-       .WithOrigins("http://0.0.0.0:5001")
-       .WithOrigins("http://0.0.0.0:3000")
-       .WithOrigins("http://0.0.0.0")
-       .AllowAnyMethod()
-       .AllowAnyHeader()
-       .AllowCredentials()
-       );
+   
 }
 
 app.UseAuthentication();
@@ -60,7 +63,6 @@ app.UseExceptionHandler(new ExceptionHandlerOptions
     }
 });
 
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

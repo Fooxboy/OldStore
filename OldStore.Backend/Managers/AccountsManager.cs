@@ -28,42 +28,42 @@ namespace OldStore.Backend.Managers
         }
 
 
-        public async Task<IdentityResult> CreateUserAsync(RegisterUserModel register)
-        {
-            var id = idGenerator.GetId();
+        //public async Task<IdentityResult> CreateUserAsync(RegisterUserModel register)
+        //{
+        //    var id = idGenerator.GetId();
 
-            var user = new User()
-            {
-                Id = id,
-                UserName = register.UserName,
-                Email = register.Email,
-            };
+        //    var user = new User()
+        //    {
+        //        Id = id,
+        //        UserName = register.UserName,
+        //        Email = register.Email,
+        //    };
 
-            var creationRes = await userManager.CreateAsync(user, register.Password).ConfigureAwait(false);
+        //    var creationRes = await userManager.CreateAsync(user, register.Password).ConfigureAwait(false);
 
-            return creationRes;
+        //    return creationRes;
 
-        }
+        //}
 
-        public async Task<string> LoginUserAsync(LoginUserModel login)
-        {
-            var user = await userManager.FindByNameAsync(login.UserName).ConfigureAwait(false);
+        //public async Task<string> LoginUserAsync(LoginUserModel login)
+        //{
+        //    var user = await userManager.FindByNameAsync(login.UserName).ConfigureAwait(false);
 
-            if (user == null) throw new UserNotFoundException();
+        //    if (user == null) throw new UserNotFoundException();
 
-            var result = await signInManager.CheckPasswordSignInAsync(user, login.Password, true).ConfigureAwait(false);
+        //    var result = await signInManager.CheckPasswordSignInAsync(user, login.Password, true).ConfigureAwait(false);
 
-            if (!result.Succeeded)
-            {
-                if (result.IsLockedOut) throw new UserBannedException();
+        //    if (!result.Succeeded)
+        //    {
+        //        if (result.IsLockedOut) throw new UserBannedException();
 
 
-                throw new IncorrectPasswordException();
-            }
-            var token = await GenerateTokenAsync(user).ConfigureAwait(false);
-            return token;
+        //        throw new IncorrectPasswordException();
+        //    }
+        //    var token = await GenerateTokenAsync(user).ConfigureAwait(false);
+        //    return token;
 
-        }
+        //}
 
         public async Task<string> GenerateTokenAsync(User user)
         {

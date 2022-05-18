@@ -3,10 +3,51 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:OldStore.Client.Views"
+        xmlns:local="clr-namespace:OldStore.Client.Views" xmlns:wpfui="http://schemas.lepo.co/wpfui/2022/xaml"
         mc:Ignorable="d"
+        Background="Transparent"
         Title="ContainerView" Height="450" Width="800">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome
+            CaptionHeight="30"
+            ResizeBorderThickness="8"
+            GlassFrameThickness="-1"
+           
+            UseAeroCaptionButtons="True" />
+    </WindowChrome.WindowChrome>
+
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Frame x:Name="Container" Grid.Column="1" />
+
+        <Border Margin="0 30 0 0" BorderBrush="Red" BorderThickness="0">
+
+            <Border.Resources>
+
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/WPFUI;component/Styles/Theme/Light.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/WPFUI;component/Styles/WPFUI.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+                
+            </Border.Resources>
+            <wpfui:NavigationStore SelectedPageIndex="0" Grid.Column="0" Margin="0 0 0 0" x:Name="navigationBar" Frame="{Binding ElementName=Container}" >
+
+                <wpfui:NavigationStore.Items>
+                    <wpfui:NavigationItem
+                        Content="Home"
+                        Icon="Home24"
+                        Page="{x:Type local:HomeView}"
+                        PageTag="dashboard" />
+
+                </wpfui:NavigationStore.Items>
+            </wpfui:NavigationStore>
+        </Border>
         
     </Grid>
 </Window>
