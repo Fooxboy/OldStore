@@ -1,5 +1,5 @@
 ﻿using OldStore.Backend.Models.Enums;
-using OldStore.Backend.Models.General;
+using OldStore.Shared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace OldStore.Backend.Services
             response.Result = default(T);
             response.Error = new ResponseError
             {
-                Code = code,
+                Code = (int)code,
                 Message = message
             };
 

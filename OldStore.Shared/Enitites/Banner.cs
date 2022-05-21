@@ -9,14 +9,20 @@ namespace OldStore.Shared.Enitites
 {
     public class Banner
     {
+        [JsonPropertyName("id")]
         public int Id { get; set; }
 
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
+
+        [JsonPropertyName("subtitle")]
         public string Subtitle { get; set; }
 
+        [JsonPropertyName("description")]
         public string Description { get; set; }
 
+        [JsonPropertyName("image")]
         public string Image { get; set; }
 
         [JsonIgnore]

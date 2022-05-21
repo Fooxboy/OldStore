@@ -43,9 +43,17 @@ namespace OldStore.Backend.Services
                     {
                         Type = block.Type,
                         Items = banners,
+                        Priority = 0,
                     });
                 }else if(block.Type == Shared.Enums.BlockType.CompactGame)
                 {
+
+                    var games = await gamesService.GetGamesAsync(null, null, 0, 4);
+
+                    var gamesPlayed = new List<object>();
+
+                    foreach (var g in games) gamesPlayed.Add(g);
+
                     catalogDto.Blocks.Add(new BlockModel()
                     {
                         Action = new ButtonAction()
@@ -54,9 +62,10 @@ namespace OldStore.Backend.Services
                             Action = "library",
                             Name = "Открыть библиотеку"
                         },
-                        Items = new List<object>(),
+                        Items = gamesPlayed,
                         Title = "Недавно запущенные игры",
-                        Type = block.Type
+                        Type = block.Type,
+                        Priority = 1,
                     });
                 }else if(block.Type  == Shared.Enums.BlockType.Game)
                 {
@@ -72,7 +81,8 @@ namespace OldStore.Backend.Services
                         {
                             Title = "Популярные игры",
                             Items = top,
-                            Type = block.Type
+                            Type = block.Type,
+                            Priority = 2
                         });
                     }
                 }else if(block.Type == Shared.Enums.BlockType.Category)
@@ -90,7 +100,8 @@ namespace OldStore.Backend.Services
                         {
                             Title = "Игры по жарнрам",
                             Items = genres,
-                            Type = block.Type
+                            Type = block.Type,
+                            Priority = 3
                         });
                     }
                     
@@ -98,6 +109,7 @@ namespace OldStore.Backend.Services
          
             }
 
+            catalogDto.Blocks = catalogDto.Blocks.OrderBy(b => b.Priority).ToList();
             return catalogDto;
         }
     }

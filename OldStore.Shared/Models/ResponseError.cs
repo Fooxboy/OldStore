@@ -1,15 +1,14 @@
-﻿using OldStore.Backend.Models.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OldStore.Backend.Models.General
+namespace OldStore.Shared.Models
 {
     public class ResponseError
     {
-        public ResponseErrorCode Code { get;set; }
+        public int Code { get; set; }
         public string Message { get; set; }
     }
 }

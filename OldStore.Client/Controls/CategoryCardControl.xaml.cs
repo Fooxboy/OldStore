@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OldStore.Shared.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,17 @@ namespace OldStore.Client.Controls
         public CategoryCardControl()
         {
             InitializeComponent();
+
+            this.Loaded += CategoryCardControl_Loaded;
         }
+
+        private void CategoryCardControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.CategoryName.Text = Category.Title;
+        }
+
+        public CategoryModel Category { get; set; }
+
+
     }
 }

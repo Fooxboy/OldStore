@@ -1,4 +1,5 @@
 ﻿using OldStore.Client.Controls;
+using OldStore.Client.ViewModels;
 using OldStore.Shared.Enitites;
 using System;
 using System.Collections.Generic;
@@ -22,81 +23,28 @@ namespace OldStore.Client.Views
     /// </summary>
     public partial class HomeView : Page
     {
+
+        private readonly HomeViewModel vm;
+
         public HomeView()
         {
+            this.vm = new HomeViewModel(new Services.ApiService());
+            this.DataContext = vm;
+
             InitializeComponent();
             this.Loaded += HomeView_Loaded;
+
         }
 
-        private void HomeView_Loaded(object sender, RoutedEventArgs e)
+        private async void HomeView_Loaded(object sender, RoutedEventArgs e)
         {
 
-            var banners = new List<Banner>();
+            await this.vm.LoadContentAsync();
+        }
 
-            banners.Add(new Banner() { Id=0, Title="Крутой баннер", Subtitle = "Ну или не очень", Description = "очень крутое описание", Image = "E:\\banner.jpg"});
-            banners.Add(new Banner() { Id=1, Title="Крутой баннер 1", Subtitle = "Ну или не очень", Description = "очень крутое описание", Image = "E:\\banner.jpg"});
-            banners.Add(new Banner() { Id=2, Title="Крутой баннер 2", Subtitle = "Ну или не очень", Description = "очень крутое описание", Image = "E:\\banner.jpg"});
-            banners.Add(new Banner() { Id=3, Title="Крутой баннер 3", Subtitle = "Ну или не очень", Description = "очень крутое описание", Image = "E:\\banner.jpg"});
-            banners.Add(new Banner() { Id=4, Title="Крутой баннер 4", Subtitle = "Ну или не очень", Description = "очень крутое описание", Image = "E:\\banner.jpg"});
-            banners.Add(new Banner() { Id=5, Title="Крутой баннер 5", Subtitle = "Ну или не очень", Description = "очень крутое описание", Image = "E:\\banner.jpg"});
+        private void BlocksScrollView_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
 
-            Banners.Banners = banners;
-
-
-            TopGames.Children.Add(new GameControl()
-            {
-                Game = new Game() { Cover = new Cover() { Url = "E:\\game.png"}, Title = "Имя игры" }
-               
-            });
-
-            TopGames.Children.Add(new GameControl()
-            {
-                Game = new Game() { Cover = new Cover() { Url = "E:\\game.png" }, Title = "Имя игры", },
-                Margin = new Thickness(10,0,0,0)
-            });
-
-            TopGames.Children.Add(new GameControl()
-            {
-                Game = new Game() { Cover = new Cover() { Url = "E:\\game.png" }, Title = "Имя игры" },
-                Margin = new Thickness(10, 0, 0, 0)
-
-
-            });
-
-            TopGames.Children.Add(new GameControl()
-            {
-                Game = new Game() { Cover = new Cover() { Url = "E:\\game.png" }, Title = "Имя игры" },
-                Margin = new Thickness(10, 0, 0, 0)
-
-
-            });
-
-            TopGames.Children.Add(new GameControl()
-            {
-                Game = new Game() { Cover = new Cover() { Url = "E:\\game.png" }, Title = "Имя игры" },
-                Margin = new Thickness(10, 0, 0, 0)
-
-
-            });
-
-
-            MyGames.Children.Add(new CompactGameControl()
-            {
-                Game = new Game() { Cover = new Cover() { Url = "E:\\game.png" }, Title = "Имя игры" }
-
-            });
-
-            MyGames.Children.Add(new CompactGameControl()
-            {
-                Game = new Game() { Cover = new Cover() { Url = "E:\\game.png" }, Title = "Имя игры", },
-                Margin = new Thickness(10, 0, 0, 0)
-            });
-
-            MyGames.Children.Add(new CompactGameControl()
-            {
-                Game = new Game() { Cover = new Cover() { Url = "E:\\game.png" }, Title = "Имя игры" },
-                Margin = new Thickness(10, 0, 0, 0)
-            });
         }
     }
 }

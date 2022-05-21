@@ -23,38 +23,60 @@
             </ResourceDictionary>
 
         </Grid.Resources>
-        <wpfui:DynamicScrollViewer>
-            <StackPanel>
-                <controls:BigBannerControl x:Name="Banners"/>
-
-                <Grid Margin="0 0 0 0">
-                   
-                    <TextBlock  FontSize="30" FontFamily="Segoe UI"  Text="Недавно запущенные игры" FontWeight="Bold"/>
-                    <wpfui:Button Appearance="Transparent" HorizontalAlignment="Right" Margin="0 0 20 0" Content="Открыть библиотеку"/>
-                </Grid>
-
-                <StackPanel Margin="0 15 0 0" x:Name="MyGames" Orientation="Horizontal">
-                    
-                </StackPanel>
 
 
-                <TextBlock Margin="0 20 0 0" FontSize="30" FontFamily="Segoe UI" Text="Популярные игры" FontWeight="Bold"/>
+        <ListBox BorderThickness="0"     
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                  VerticalContentAlignment="Top" 
+                     ScrollViewer.ScrollChanged="BlocksScrollView_ScrollChanged"
+                     SnapsToDevicePixels="True"
+                  HorizontalContentAlignment="Stretch"
+                    ScrollViewer.CanContentScroll="False"
+                  x:Name="BlocksScrollView"
+                  ItemsSource="{Binding Path=Blocks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                  Background="Transparent" RenderTransformOrigin="0.5,0.5">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
 
-                <StackPanel Margin="0 5 0 0" x:Name="TopGames" Orientation="Horizontal">
+            <ListBox.Template>
+                <ControlTemplate TargetType="{x:Type ListBox}">
 
-                </StackPanel>
+                    <wpfui:DynamicScrollViewer Focusable="False" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel IsItemsHost="True" Margin="0 0 0 0"/>
+                    </wpfui:DynamicScrollViewer>
+
+                </ControlTemplate>
+            </ListBox.Template>
 
 
-                <TextBlock Margin="0 20 0 0" FontSize="30" FontFamily="Segoe UI" Text="Игры по жанрам" FontWeight="Bold"/>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <ContentPresenter/>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
 
-                <StackPanel Margin="0 5 0 0" x:Name="Categories" Orientation="Horizontal">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <controls:BlockControl Block="{Binding}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
-                    <controls:CategoryCardControl/>
-                    <controls:CategoryCardControl Margin="10 0 0 0"/>
-                    <controls:CategoryCardControl Margin="10 0 0 0"/>
-                </StackPanel>
-            </StackPanel>
-        </wpfui:DynamicScrollViewer>
+       
         
     </Grid>
 </Page>

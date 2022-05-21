@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="OldStore.Client.Controls.CategoryCardControl"
+﻿<UserControl x:Class="OldStore.Client.Controls.BlockControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -8,13 +8,13 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
 
-        <Rectangle Width="300" Height="100"  RadiusX="10" RadiusY="10">
-            <Rectangle.Fill>
-                <ImageBrush Stretch="UniformToFill" ImageSource="E:\game.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
+        <StackPanel>
+            <TextBlock Text="Название" FontSize="30" FontWeight="Bold" x:Name="BlockTitle"/>
 
-        <TextBlock x:Name="CategoryName" HorizontalAlignment="Center" Foreground="White"  FontWeight="Bold" VerticalAlignment="Center" FontSize="23" Text="Приключение"/>
+            <StackPanel x:Name="BlockPanel" Margin="0 10 0 20">
 
+            </StackPanel>
+        </StackPanel>
+       
     </Grid>
 </UserControl>

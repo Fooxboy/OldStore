@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\home-black.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="WPF-UI" Version="1.2.7" />
   </ItemGroup>
 
@@ -20,9 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Assets\home-black.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Folder Include="Assets\" />
   </ItemGroup>
 
 </Project>

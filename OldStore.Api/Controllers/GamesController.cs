@@ -2,10 +2,10 @@
 using OldStore.Backend.Exceptions;
 using OldStore.Backend.Models.Entities;
 using OldStore.Backend.Models.Enums;
-using OldStore.Backend.Models.General;
 using OldStore.Backend.Services;
 using OldStore.Shared.Enitites;
 using OldStore.Shared.Enums;
+using OldStore.Shared.Models;
 
 namespace OldStore.Api.Controllers
 {
