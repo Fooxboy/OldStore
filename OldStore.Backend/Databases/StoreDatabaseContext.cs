@@ -19,6 +19,10 @@ namespace OldStore.Backend.Databases
 
         public DbSet<Banner> Banners { get; set; }
 
+        public DbSet<Catalog> Catalogs { get; set; }
+        public DbSet<Block> Blocks { get; set; }
+
+
         public StoreDatabaseContext(DbContextOptions<StoreDatabaseContext> options) : base(options)
         {
 

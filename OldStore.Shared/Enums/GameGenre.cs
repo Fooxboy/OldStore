@@ -40,7 +40,9 @@ namespace OldStore.Shared.Enums
 
         Fighting,
 
-        ActionRPG
+        ActionRPG,
+
+        BeatemUp
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OldStore.Shared.Enitites;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,16 @@ namespace OldStore.Client.Controls
         public CompactGameControl()
         {
             InitializeComponent();
+            this.Loaded += CompactGameControl_Loaded;
         }
+
+        private void CompactGameControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.CoverGame.ImageSource = new BitmapImage(new Uri(this.Game.Cover.Url));
+            this.GameName.Text = this.Game.Title;
+        }
+
+        public Game Game { get; set; }
+
     }
 }

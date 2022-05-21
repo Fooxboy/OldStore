@@ -43,5 +43,12 @@ namespace OldStore.Backend.Services
 
             return game;
         }
+
+        public async Task<List<Game>> GetTopGamesAsync(int skip=0, int take=10)
+        {
+            var games = await this.GetGamesAsync(null, null, 0, 10);
+
+            return games;
+        }
     }
 }

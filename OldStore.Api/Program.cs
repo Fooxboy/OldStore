@@ -225,4 +225,5 @@ void ConfigureServices(IServiceCollection services)
 
     services.AddSingleton<IdGeneratorService>();
     services.AddTransient<GamesService>();
+    services.AddTransient<CatalogsService>();
 }

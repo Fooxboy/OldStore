@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace OldStore.Shared.Enitites
@@ -18,6 +19,7 @@ namespace OldStore.Shared.Enitites
 
         public int GameId { get; set; }
 
+        [JsonIgnore]
         public Game Game { get; set; }
     }
 }

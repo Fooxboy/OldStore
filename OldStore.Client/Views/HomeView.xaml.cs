@@ -78,6 +78,25 @@ namespace OldStore.Client.Views
 
 
             });
+
+
+            MyGames.Children.Add(new CompactGameControl()
+            {
+                Game = new Game() { Cover = new Cover() { Url = "E:\\game.png" }, Title = "Имя игры" }
+
+            });
+
+            MyGames.Children.Add(new CompactGameControl()
+            {
+                Game = new Game() { Cover = new Cover() { Url = "E:\\game.png" }, Title = "Имя игры", },
+                Margin = new Thickness(10, 0, 0, 0)
+            });
+
+            MyGames.Children.Add(new CompactGameControl()
+            {
+                Game = new Game() { Cover = new Cover() { Url = "E:\\game.png" }, Title = "Имя игры" },
+                Margin = new Thickness(10, 0, 0, 0)
+            });
         }
     }
 }

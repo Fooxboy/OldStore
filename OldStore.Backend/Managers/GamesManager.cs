@@ -24,7 +24,7 @@ namespace OldStore.Backend.Managers
 
         public async Task<List<Game>> GetGamesAsync(int skip=0, int take=10)
         {
-            var games = await db.Games.Skip(skip).Take(take).ToListAsync();
+            var games = await db.Games.Include(g=> g.Cover).Skip(skip).Take(take).ToListAsync();
 
             return games;
         }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OldStore.Backend.Databases;
 
@@ -10,9 +11,10 @@ using OldStore.Backend.Databases;
 namespace OldStore.Backend.Migrations
 {
     [DbContext(typeof(StoreDatabaseContext))]
-    partial class StoreDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20220521174756_AddedCatalogs")]
+    partial class AddedCatalogs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

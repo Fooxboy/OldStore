@@ -39,7 +39,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <TextBlock Foreground="White" FontSize="20" HorizontalAlignment="Left" Margin="5 0 0 0" MaxWidth="178" TextTrimming="CharacterEllipsis"  VerticalAlignment="Center" FontWeight="DemiBold" Text="Имя игры или название длинное очень"/>
+        <TextBlock x:Name="GameName" Foreground="White" FontSize="20" HorizontalAlignment="Left" Margin="5 0 0 0" MaxWidth="178" TextTrimming="CharacterEllipsis"  VerticalAlignment="Center" FontWeight="DemiBold" Text="Имя игры или название длинное очень"/>
 
 
         <wpfui:Button HorizontalAlignment="Right" Content="Играть" Width="100" Icon="Play24" Margin="0 0 20 0" Appearance="Secondary"/>

@@ -135,6 +135,7 @@ namespace OldStore.Client.Controls
                             currentIndex = -1;
                         }
 
+                        BannersManager.Invoke(Banners[currentIndex +1]);
                     });
                 }
                 catch (Exception ex)

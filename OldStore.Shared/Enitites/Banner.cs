@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace OldStore.Shared.Enitites
@@ -17,5 +18,8 @@ namespace OldStore.Shared.Enitites
         public string Description { get; set; }
 
         public string Image { get; set; }
+
+        [JsonIgnore]
+        public List<Catalog> Catalogs { get; set; }
     }
 }
