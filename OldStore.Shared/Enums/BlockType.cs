@@ -8,12 +8,14 @@ namespace OldStore.Shared.Enums
 {
     public enum BlockType
     {
-        Banner,
+        Unknown = 0,
 
-        Game,
+        Banner = 1,
 
-        CompactGame,
+        Game = 2,
 
-        Category
+        CompactGame = 3,
+
+        Category = 4
     }
 }

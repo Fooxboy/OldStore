@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace OldStore.Shared.Enitites
 {
@@ -15,7 +10,6 @@ namespace OldStore.Shared.Enitites
         [JsonPropertyName("title")]
         public string Title { get; set; }
 
-
         [JsonPropertyName("subtitle")]
         public string Subtitle { get; set; }
 
@@ -26,6 +20,6 @@ namespace OldStore.Shared.Enitites
         public string Image { get; set; }
 
         [JsonIgnore]
-        public List<Catalog> Catalogs { get; set; }
+        public List<Catalog> Catalogs { get; set; } = new();
     }
 }

@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -109,7 +108,7 @@ void ConfigureServices(IServiceCollection services)
 
     var db = builder.Configuration.GetValue<string>("Database");
 
-    services.AddDbContext<StoreDatabaseContext>(options => options.UseMySql(db, ServerVersion.AutoDetect(db)));
+    services.AddDbContext<StoreDatabaseContext>(options => options.UseNpgsql(db));
 
 
     services

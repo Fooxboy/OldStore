@@ -1,6 +1,4 @@
-﻿
-using System.ComponentModel.DataAnnotations;
-
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace OldStore.Shared.Enitites
 {
@@ -11,9 +9,10 @@ namespace OldStore.Shared.Enitites
 
         public string Name { get; set; }
 
-        public List<Banner> Banners { get; set; }
+        public string FrendlyName { get; set; }
 
-        public List<Block> Blocks { get; set; }
+        public virtual List<Banner> Banners { get; set; }
 
+        public virtual List<Block> Blocks { get; set; }
     }
 }

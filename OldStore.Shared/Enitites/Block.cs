@@ -1,10 +1,5 @@
 ﻿using OldStore.Shared.Enums;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OldStore.Shared.Enitites
 {
@@ -14,6 +9,12 @@ namespace OldStore.Shared.Enitites
         public int Id { get; set; }
 
         public BlockType Type { get; set; }
+
+        public string Title { get; set; }
+
+        public int ActionButtonId { get; set; }
+
+        public ActionButton ActionButton { get; set; }
 
         public string Metadata { get; set; }
 

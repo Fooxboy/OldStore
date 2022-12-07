@@ -8,7 +8,6 @@ namespace OldStore.Backend.Services
 {
     public class CatalogsService
     {
-
         private readonly StoreDatabaseContext db;
         private readonly GamesService gamesService;
         private readonly IConfiguration configuration;
@@ -23,14 +22,14 @@ namespace OldStore.Backend.Services
         public async Task<CatalogModel> GetHomeCatalog(int? userId)
         {
             var catalogName = configuration["HomeCatalogName"];
+
             var catalogEntity = await db.Catalogs.Include(c=> c.Banners).Include(c=> c.Blocks).FirstOrDefaultAsync(c => c.Name == catalogName);
 
             var catalogDto = new CatalogModel();
 
-            catalogDto.Name = "Главная";
+            catalogDto.Name = catalogEntity.FrendlyName;
 
             catalogDto.Blocks = new List<BlockModel>();
-
 
             foreach(var block in catalogEntity.Blocks)
             {
@@ -47,7 +46,6 @@ namespace OldStore.Backend.Services
                     });
                 }else if(block.Type == Shared.Enums.BlockType.CompactGame)
                 {
-
                     var games = await gamesService.GetGamesAsync(null, null, 0, 4);
 
                     var gamesPlayed = new List<object>();

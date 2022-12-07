@@ -24,7 +24,6 @@ namespace OldStore.Shared.Enitites
         public int CoverId { get; set; }
 
         [JsonPropertyName("cover")]
-
         public Cover Cover { get; set; }
 
         [JsonPropertyName("genre")]
