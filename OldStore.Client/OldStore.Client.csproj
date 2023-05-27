@@ -7,16 +7,4 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="WPF-UI" Version="1.2.7" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\OldStore.Shared\OldStore.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Assets\" />
-  </ItemGroup>
-
 </Project>
