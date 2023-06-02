@@ -4,18 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OldStore.Games.Domain.AggregatesModel.CatalogAggregate
+namespace OldStore.Games.Domain.AggregatesModel.BlockAggregate
 {
-    public enum CatalogType
+    public enum BlockStatus
     {
         NA,
 
-        Hot,
+        Active,
 
-        Genre,
-
-        Promo,
-
-
+        Archive,
     }
 }

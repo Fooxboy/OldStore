@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OldStore.Shared.Models;
 
 namespace OldStore.API.Controllers
 {
@@ -9,10 +10,12 @@ namespace OldStore.API.Controllers
         public GamesController() { }
 
 
-        [HttpGet("games/{id}")]
-        public void GetGameById(int id)
+        [HttpGet("games.get")]
+        public async  Task<Game> GetGameById(int id)
         {
             //todo: get game
+
+            return null;
         }
     }
 }

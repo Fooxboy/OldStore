@@ -44,6 +44,5 @@ namespace OldStore.Games.Domain.AggregatesModel.GameAggregate
             this.AddDomainEvent(changeTitleEvent);
 
         }
-
     }
 }
