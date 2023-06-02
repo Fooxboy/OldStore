@@ -1,3 +1,5 @@
+using OldStore.Catalogs.API.Grpc;
+
 namespace OldStore.Catalogs.API
 {
     public class Program
@@ -5,6 +7,9 @@ namespace OldStore.Catalogs.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+
+            builder.Services.AddGrpc();
 
             // Add services to the container.
 
@@ -26,6 +31,7 @@ namespace OldStore.Catalogs.API
 
             app.UseAuthorization();
 
+            app.MapGrpcService<CatalogsService>();
 
             app.MapControllers();
 
