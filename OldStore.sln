@@ -5,29 +5,37 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{EAC1A758-2569-42CE-B3B9-0BFA031E6424}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.API", "Backend\OldStore.API\OldStore.API.csproj", "{6B26C234-6EA5-49D6-B08C-5F5EDD59382B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.API", "Backend\OldStore.API\OldStore.API.csproj", "{6B26C234-6EA5-49D6-B08C-5F5EDD59382B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games", "Games", "{D896ACB2-8D27-4D5E-9BC8-7F4022A387C9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{37478171-F341-4191-8036-9DD090CB7919}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Shared", "OldStore.Shared\OldStore.Shared.csproj", "{556A85FD-AE0F-48A0-AF8D-3DD7CDFAD5AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Shared", "OldStore.Shared\OldStore.Shared.csproj", "{556A85FD-AE0F-48A0-AF8D-3DD7CDFAD5AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Games.Domain", "Backend\Games\OldStore.Games.Domain\OldStore.Games.Domain.csproj", "{20DFE0A9-C54D-486F-AF8B-186440CD314D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Games.Domain", "Backend\Games\OldStore.Games.Domain\OldStore.Games.Domain.csproj", "{20DFE0A9-C54D-486F-AF8B-186440CD314D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Games.Infrastructure", "Backend\Games\OldStore.Games.Infrastructure\OldStore.Games.Infrastructure.csproj", "{A555A661-9357-46EF-A426-0AFCEFD210C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Games.Infrastructure", "Backend\Games\OldStore.Games.Infrastructure\OldStore.Games.Infrastructure.csproj", "{A555A661-9357-46EF-A426-0AFCEFD210C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Auth.API", "Backend\Auth\OldStore.Auth.API\OldStore.Auth.API.csproj", "{14E35808-B430-4BA6-876E-707F6C8E09D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Auth.API", "Backend\Auth\OldStore.Auth.API\OldStore.Auth.API.csproj", "{14E35808-B430-4BA6-876E-707F6C8E09D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Auth.Domain", "Backend\Auth\OldStore.Auth.Domain\OldStore.Auth.Domain.csproj", "{04350ACD-8801-4E08-A3F1-F6C79E6AAB21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Auth.Domain", "Backend\Auth\OldStore.Auth.Domain\OldStore.Auth.Domain.csproj", "{04350ACD-8801-4E08-A3F1-F6C79E6AAB21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Auth.Infrastructure", "Backend\Auth\OldStore.Auth.Infrastructure\OldStore.Auth.Infrastructure.csproj", "{2C2D1BD7-8BD7-41B0-975D-96252E5DDFA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Auth.Infrastructure", "Backend\Auth\OldStore.Auth.Infrastructure\OldStore.Auth.Infrastructure.csproj", "{2C2D1BD7-8BD7-41B0-975D-96252E5DDFA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Services.Shared", "Backend\OldStore.Services.Shared\OldStore.Services.Shared.csproj", "{E616879B-782E-4589-A7CB-FDC3C0A55249}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Services.Shared", "Backend\OldStore.Services.Shared\OldStore.Services.Shared.csproj", "{E616879B-782E-4589-A7CB-FDC3C0A55249}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Games.API", "Backend\Games\OldStore.Games.API\OldStore.Games.API.csproj", "{4710551A-759E-4667-8441-AB6AD7B12479}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Games.API", "Backend\Games\OldStore.Games.API\OldStore.Games.API.csproj", "{4710551A-759E-4667-8441-AB6AD7B12479}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{9009F215-1500-4035-A271-75D427AC03F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalogs", "Catalogs", "{940BFB51-46B3-4B8B-A0D2-D4BDA660F128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Catalogs.API", "Backend\Catalogs\OldStore.Catalogs.API\OldStore.Catalogs.API.csproj", "{EEFEF8F7-ECF0-454E-A3DB-6A123D58D133}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Catalogs.Domain", "Backend\Catalogs\OldStore.Catalogs.Domain\OldStore.Catalogs.Domain.csproj", "{1B3E8640-1EE7-4021-AD02-5176B7C9132E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Catalogs.Infrastructure", "Backend\Catalogs\OldStore.Catalogs.Infrastructure\OldStore.Catalogs.Infrastructure.csproj", "{C88BCF75-7C85-4B8E-BAE5-C20132C89332}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +79,18 @@ Global
 		{4710551A-759E-4667-8441-AB6AD7B12479}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4710551A-759E-4667-8441-AB6AD7B12479}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4710551A-759E-4667-8441-AB6AD7B12479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEFEF8F7-ECF0-454E-A3DB-6A123D58D133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEFEF8F7-ECF0-454E-A3DB-6A123D58D133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEFEF8F7-ECF0-454E-A3DB-6A123D58D133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEFEF8F7-ECF0-454E-A3DB-6A123D58D133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3E8640-1EE7-4021-AD02-5176B7C9132E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3E8640-1EE7-4021-AD02-5176B7C9132E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3E8640-1EE7-4021-AD02-5176B7C9132E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3E8640-1EE7-4021-AD02-5176B7C9132E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C88BCF75-7C85-4B8E-BAE5-C20132C89332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C88BCF75-7C85-4B8E-BAE5-C20132C89332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C88BCF75-7C85-4B8E-BAE5-C20132C89332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C88BCF75-7C85-4B8E-BAE5-C20132C89332}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +106,10 @@ Global
 		{2C2D1BD7-8BD7-41B0-975D-96252E5DDFA0} = {37478171-F341-4191-8036-9DD090CB7919}
 		{E616879B-782E-4589-A7CB-FDC3C0A55249} = {EAC1A758-2569-42CE-B3B9-0BFA031E6424}
 		{4710551A-759E-4667-8441-AB6AD7B12479} = {D896ACB2-8D27-4D5E-9BC8-7F4022A387C9}
+		{940BFB51-46B3-4B8B-A0D2-D4BDA660F128} = {EAC1A758-2569-42CE-B3B9-0BFA031E6424}
+		{EEFEF8F7-ECF0-454E-A3DB-6A123D58D133} = {940BFB51-46B3-4B8B-A0D2-D4BDA660F128}
+		{1B3E8640-1EE7-4021-AD02-5176B7C9132E} = {940BFB51-46B3-4B8B-A0D2-D4BDA660F128}
+		{C88BCF75-7C85-4B8E-BAE5-C20132C89332} = {940BFB51-46B3-4B8B-A0D2-D4BDA660F128}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2691AB8E-1691-453C-846E-EFB9546C356D}

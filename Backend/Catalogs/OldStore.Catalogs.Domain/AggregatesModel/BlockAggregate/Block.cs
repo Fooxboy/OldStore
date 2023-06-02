@@ -1,11 +1,10 @@
-﻿using OldStore.Games.Domain.AggregatesModel.GameAggregate;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OldStore.Games.Domain.AggregatesModel.BlockAggregate
+namespace OldStore.Catalogs.Domain.AggregatesModel.BlockAggregate
 {
     public class Block
     {
@@ -17,15 +16,15 @@ namespace OldStore.Games.Domain.AggregatesModel.BlockAggregate
 
         public BlockType @Type { get; private set; }
 
-        public IReadOnlyCollection<Game> Games { get; private set; }
+        public IReadOnlyCollection<long> GamesIds { get; private set; }
 
-        public Block(string title, string description, BlockStatus status, BlockType type, IEnumerable<Game> games)
+        public Block(string title, string description, BlockStatus status, BlockType type, IEnumerable<long> games)
         {
             this.Title = title;
             this.Description = description;
             this.Status = status;
             this.Type = type;
-            this.Games = games.ToList();
+            this.GamesIds = games.ToList();
         }
     }
 }

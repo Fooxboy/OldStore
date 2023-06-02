@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcCatalogs";
+
+package CatalogsApi;
+
+service Catalogs {
+	rpc GetList(Empty) returns (ListCatalogResponce) {}
+	rpc GetCatalog(GetCatalogRequest) returns (CatalogResponse) {}
+}
+
+message GetCatalogRequest {
+	int64 id = 1;
+}
+
+message Empty {
+
+}
+
+
+message ListCatalogResponce {
+	repeated CatalogResponse items = 1;
+}
+
+message CatalogResponse {
+	int64 id = 1;
+	string name = 2;
+	string title = 3;
+	repeated int64 blocks = 4;
+}
