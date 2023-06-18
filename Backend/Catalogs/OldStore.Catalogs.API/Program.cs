@@ -1,5 +1,9 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using OldStore.Catalogs.API.Grpc;
 using OldStore.Catalogs.API.Helpers;
+using OldStore.Catalogs.Infrastructure.Database;
+using OldStore.Catalogs.Infrastructure.Repositories;
 
 namespace OldStore.Catalogs.API
 {
@@ -9,10 +13,19 @@ namespace OldStore.Catalogs.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddGrpc();
             builder.Services.AddAutoMapper(typeof(AppMappingProfile));
 
+            builder.Services.AddDbContext<CatalogsContext>(options =>
+                    options.UseNpgsql("Host=localhost:5432;Database=catalogs;Username=postgres;Password=123456"));
+
             // Add services to the container.
+
+            builder.Services.AddTransient<IBlocksRepository, BlocksRepository>();
+            builder.Services.AddTransient<ICatalogsRepository, CatalogsRepository>();
+            builder.Services.AddTransient<OldStore.Catalogs.Infrastructure.Services.CatalogsService>();
+
+
+            builder.Services.AddGrpc();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

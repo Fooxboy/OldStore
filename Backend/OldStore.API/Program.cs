@@ -1,7 +1,12 @@
+using OldStore.API.Helpers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddGrpc();
+
+builder.Services.AddAutoMapper(typeof(GatewayAutoMapperProfile));
+
 
 // Add services to the container.
 builder.Services.AddControllers();
