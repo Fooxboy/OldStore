@@ -9,9 +9,10 @@ namespace OldStore.Catalogs.Infrastructure.Services
         private readonly ICatalogsRepository _catalogsRepository;
         private readonly IBlocksRepository _blocksRepository;
 
-        public CatalogsService()
+        public CatalogsService(ICatalogsRepository catalogsRepository, IBlocksRepository blocksRepository)
         {
-            
+            _catalogsRepository = catalogsRepository;
+            _blocksRepository = blocksRepository;
         }
 
         public Catalog GetById(int id)
@@ -27,7 +28,28 @@ namespace OldStore.Catalogs.Infrastructure.Services
             catalogEntity.SetBlocks(blocksEntities);
 
             return catalogEntity;
+        }
 
+        public List<Catalog> GetGenerals()
+        {
+            var catalogs = _catalogsRepository.GetGenerals();
+
+            var catalogsEntity = new List<Catalog>();
+
+            foreach (var catalog in catalogs)
+            {
+                var c = catalog.CreateDomainEntity();
+                var blocksEntities = _blocksRepository
+                    .GetByIds(catalog.BlocksIds.ToArray())
+                    .Select(x=> x.CreateDomainEntity())
+                    .ToList();
+                c.SetBlocks(blocksEntities);
+
+                catalogsEntity.Add(c);
+            }
+
+
+            return catalogsEntity;
         }
     }
 }

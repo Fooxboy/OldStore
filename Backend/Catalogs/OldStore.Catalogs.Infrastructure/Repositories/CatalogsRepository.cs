@@ -9,12 +9,17 @@ namespace OldStore.Catalogs.Infrastructure.Repositories
 {
     public class CatalogsRepository : ICatalogsRepository
     {
-        public List<Catalog> GetAll()
+        public List<Catalog> GetGenerals()
         {
             throw new NotImplementedException();
         }
 
         public Catalog GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Catalog> GetByIds(params int[] ids)
         {
             throw new NotImplementedException();
         }

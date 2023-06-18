@@ -28,10 +28,24 @@ namespace OldStore.Catalogs.API.Grpc
             return response;
         }
 
-        public override Task<ListCatalogResponce> GetList(Empty request, ServerCallContext context)
+        public override async Task<ListCatalogResponce> GetList(Empty request, ServerCallContext context)
         {
-            return null;
-            //return base.GetList(request, context);
+            var catalogsEntity = _catalogsService.GetGenerals();
+
+            var response = new ListCatalogResponce();
+
+            var catalogs = catalogsEntity.Select(x => _mapper.Map<CatalogResponse>(x)).ToList();
+            
+
+            for(int i = 0; i < catalogs.Count(); i++)
+            {
+                var blocks = catalogsEntity[i].Blocks.Select(x => _mapper.Map<BlockResponse>(x));
+                catalogs[i].Blocks.AddRange(blocks);
+            }
+
+            response.Items.AddRange(catalogs);
+
+            return response;
         }
     }
 }

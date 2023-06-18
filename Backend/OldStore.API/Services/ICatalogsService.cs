@@ -6,6 +6,6 @@ namespace OldStore.API.Services
     {
         public Task<List<Catalog>> GetListCatalogsAsync();
 
-        public Task<Catalog> GetCatalogAsync(long id);
+        public Task<Catalog> GetCatalogAsync(int id);
     }
 }

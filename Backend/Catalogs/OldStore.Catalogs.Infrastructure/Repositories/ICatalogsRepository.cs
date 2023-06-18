@@ -11,6 +11,8 @@ namespace OldStore.Catalogs.Infrastructure.Repositories
     {
         public Catalog GetById(int id);
 
-        public List<Catalog> GetAll();
+        public List<Catalog> GetGenerals();
+
+        public List<Catalog> GetByIds(params int[] ids);
     }
 }

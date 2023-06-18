@@ -13,7 +13,7 @@ namespace OldStore.API.Controllers
             _catalogsService = catalogsService;
         }
 
-        [HttpGet("catalogs.getList")]
+        [HttpGet("catalogs.getGenerals")]
         public async Task<List<Catalog>> GetCatalogsList()
         {
             var catalogs = await _catalogsService.GetListCatalogsAsync();

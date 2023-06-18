@@ -1,4 +1,5 @@
-﻿using OldStore.Shared.Models;
+﻿using AutoMapper;
+using OldStore.Shared.Models;
 
 namespace OldStore.API.Services
 {
@@ -6,25 +7,41 @@ namespace OldStore.API.Services
     {
         private readonly GrpcCatalogs.Catalogs.CatalogsClient _client;
 
-        public CatalogsService(GrpcCatalogs.Catalogs.CatalogsClient client)
+        private readonly IMapper _mapper;
+
+        public CatalogsService(GrpcCatalogs.Catalogs.CatalogsClient client, IMapper mapper)
         {
             _client = client;
+            _mapper = mapper;
         }
-        public async Task<Catalog> GetCatalogAsync(long id)
-        {
-            var catalog = await _client.GetCatalogAsync(new GrpcCatalogs.GetCatalogRequest { Id = id });
 
-            //todo: magic mapping
-            return null;
+        public async Task<Catalog> GetCatalogAsync(int id)
+        {
+            var catalogResponse = await _client.GetCatalogAsync(new GrpcCatalogs.GetCatalogRequest { Id = id });
+
+            var catalog = _mapper.Map<Catalog>(catalogResponse);
+
+            var blocks = catalogResponse.Blocks.Select(b => _mapper.Map<Block>(b));
+
+            catalog.Blocks = new List<Block>(blocks);
+
+            return catalog;
         }
 
         public async Task<List<Catalog>> GetListCatalogsAsync()
         {
-            var catalogs = await _client.GetListAsync(null);
+            var catalogsResponse = await _client.GetListAsync(null);
 
-            //todo: magic mapping
+            var catalogs = catalogsResponse.Items.Select(c => _mapper.Map<Catalog>(c)).ToList();
 
-            return null;
+            for(int i = 0; i < catalogs.Count(); i++)
+            {
+                var blocks = catalogsResponse.Items[i].Blocks.Select(x => _mapper.Map<Block>(x));
+
+                catalogs[i].Blocks = new List<Block>(blocks);
+            }
+
+            return catalogs;
         }
     }
 }
