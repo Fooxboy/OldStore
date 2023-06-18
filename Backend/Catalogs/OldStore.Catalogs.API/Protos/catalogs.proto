@@ -10,7 +10,7 @@ service Catalogs {
 }
 
 message GetCatalogRequest {
-	int64 id = 1;
+	int32 id = 1;
 }
 
 message Empty {
@@ -23,8 +23,17 @@ message ListCatalogResponce {
 }
 
 message CatalogResponse {
-	int64 id = 1;
+	int32 id = 1;
 	string name = 2;
 	string title = 3;
-	repeated int64 blocks = 4;
+	repeated BlockResponse blocks = 4;
+}
+
+message BlockResponse {
+	int32 id = 1;
+	string title = 2;
+	string description = 3; 
+	int32 status = 4;
+	int32 type = 5;
+	repeated int64 gamesIds = 6;
 }

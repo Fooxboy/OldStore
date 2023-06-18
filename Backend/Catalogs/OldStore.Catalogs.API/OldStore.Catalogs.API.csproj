@@ -19,6 +19,10 @@
     <Folder Include="Controllers\" />
     <Folder Include="Protos\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OldStore.Catalogs.Infrastructure\OldStore.Catalogs.Infrastructure.csproj" />
+  </ItemGroup>
 	
 	<ItemGroup>
 		<Protobuf Include="Protos\catalogs.proto" GrpcServices="Server" />

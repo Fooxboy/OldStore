@@ -11,11 +11,15 @@ namespace OldStore.Catalogs.Domain.AggregatesModel.CatalogAggregate
 
         public List<Block> Blocks { get; private set; }
 
-        public Catalog(string name, string title, IEnumerable<Block> blocks)
+        public Catalog(string name, string title)
         {
             this.Name = name;
             this.Title = title;
-            this.Blocks = blocks.ToList();
+        }
+
+        public void SetBlocks(List<Block> blocks)
+        {
+            this.Blocks = blocks;
         }
     }
 }

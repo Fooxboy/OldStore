@@ -1,4 +1,5 @@
 using OldStore.Catalogs.API.Grpc;
+using OldStore.Catalogs.API.Helpers;
 
 namespace OldStore.Catalogs.API
 {
@@ -8,8 +9,8 @@ namespace OldStore.Catalogs.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-
             builder.Services.AddGrpc();
+            builder.Services.AddAutoMapper(typeof(AppMappingProfile));
 
             // Add services to the container.
 

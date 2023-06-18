@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OldStore.Services.Shared.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OldStore.Catalogs.Domain.AggregatesModel.BlockAggregate
 {
-    public class Block
+    public class Block : DomainEntity
     {
         public string Title { get; private set; }
 
