@@ -22,13 +22,12 @@ namespace OldStore.API.Controllers
         }
 
         [HttpGet("catalogs.get")]
-        public async Task<Catalog> GetCatalog(long id)
+        public async Task<Catalog> GetCatalog(int id)
         {
             var catalog = await _catalogsService.GetCatalogAsync(id);
 
             return catalog;
         }
 
-        
     }
 }

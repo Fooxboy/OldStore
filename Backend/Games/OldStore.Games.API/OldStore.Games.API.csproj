@@ -15,4 +15,8 @@
     <Folder Include="Protos\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OldStore.Games.Infrastructure\OldStore.Games.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

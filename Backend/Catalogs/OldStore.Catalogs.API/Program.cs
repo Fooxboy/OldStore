@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using OldStore.Catalogs.API.Grpc;
 using OldStore.Catalogs.API.Helpers;
 using OldStore.Catalogs.Infrastructure.Database;

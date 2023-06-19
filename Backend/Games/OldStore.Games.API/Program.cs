@@ -1,3 +1,5 @@
+using OldStore.Games.Infrastructure.Repositories;
+
 namespace OldStore.Games.API
 {
     public class Program
@@ -12,6 +14,8 @@ namespace OldStore.Games.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddTransient<IGamesRepository, GamesRepository>();
 
             var app = builder.Build();
 
