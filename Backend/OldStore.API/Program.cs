@@ -2,8 +2,10 @@ using OldStore.API.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-builder.Services.AddGrpc();
+builder.Services.AddGrpcClient<GrpcCatalogs.Catalogs.CatalogsClient>((s, o) =>
+{
+    o.Address = new Uri("https://localhost:5001");
+});
 
 builder.Services.AddAutoMapper(typeof(GatewayAutoMapperProfile));
 
