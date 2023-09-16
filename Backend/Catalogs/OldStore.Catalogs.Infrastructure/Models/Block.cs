@@ -19,6 +19,8 @@ namespace OldStore.Catalogs.Infrastructure.Models
         public int Status { get; set; }
 
         public int @Type { get;  set; }
+        
+        public List<Catalog> Catalogs { get; set; }
 
         public List<long> GamesIds { get; set; }
     }

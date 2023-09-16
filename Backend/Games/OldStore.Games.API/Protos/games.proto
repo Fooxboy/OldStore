@@ -1,0 +1,41 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "GrpcGames";
+
+package GamesApi;
+
+
+service GamesGrpc {
+	rpc GetByIds(GetByIdsRequest) returns (GetByIdsResponse) {}
+}
+
+message Empty {
+
+}
+
+message GetByIdsResponse {
+	repeated GameGrpc items = 1;
+}
+
+message GetByIdsRequest {
+	repeated int32 items = 1;
+}
+
+message GameGrpc {
+	string title = 1;
+	int32 year = 2;
+	string description = 3;
+	repeated ImageGrpc images = 4;
+	string publisher = 5;
+	repeated DeveloperGrpc developers = 6;
+	repeated int32 genres = 7;
+}
+
+message ImageGrpc {
+	string url = 1;
+}
+
+message DeveloperGrpc {
+	string name = 1;
+	string payload = 2;
+}

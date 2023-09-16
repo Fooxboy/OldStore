@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GrpcCatalogs;
 using OldStore.Shared.Models;
 
 namespace OldStore.API.Services
@@ -15,10 +16,15 @@ namespace OldStore.API.Services
             _mapper = mapper;
         }
 
-        public async Task<Catalog> GetCatalogAsync(int id)
+        public async Task<Catalog?> GetCatalogAsync(int id)
         {
             var catalogResponse = await _client.GetCatalogAsync(new GrpcCatalogs.GetCatalogRequest { Id = id });
 
+            if (!catalogResponse.Success)
+            {
+                return null;
+            }
+            
             var catalog = _mapper.Map<Catalog>(catalogResponse);
 
             var blocks = catalogResponse.Blocks.Select(b => _mapper.Map<Block>(b));
@@ -30,9 +36,12 @@ namespace OldStore.API.Services
 
         public async Task<List<Catalog>> GetListCatalogsAsync()
         {
-            var catalogsResponse = await _client.GetListAsync(null);
+            var catalogsResponse = await _client.GetListAsync(new Empty());
 
-            var catalogs = catalogsResponse.Items.Select(c => _mapper.Map<Catalog>(c)).ToList();
+            var catalogs = catalogsResponse.Items
+                .Where(c=> c.Success)
+                .Select(c => _mapper.Map<Catalog>(c))
+                .ToList();
 
             for(int i = 0; i < catalogs.Count(); i++)
             {

@@ -13,5 +13,9 @@ namespace OldStore.Catalogs.Infrastructure.DomainMappers
         {
             return new Block(block.Title, block.Description, (BlockStatus)block.Status, (BlockType)block.Type, block.GamesIds);
         }
+        public static List<Block> CreateDomainEntityList(this List<Models.Block> blocks)
+        {
+            return blocks.Select(x => x.CreateDomainEntity()).ToList();
+        }
     }
 }

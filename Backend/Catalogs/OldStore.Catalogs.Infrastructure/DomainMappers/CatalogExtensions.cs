@@ -11,7 +11,7 @@ namespace OldStore.Catalogs.Infrastructure.DomainMappers
     {
         public static Catalog CreateDomainEntity(this Models.Catalog dbCatalog)
         {
-            return new Catalog(dbCatalog.Name, dbCatalog.Name);
+            return new Catalog(dbCatalog.Name, dbCatalog.Name, dbCatalog.Id);
         }
 
     }

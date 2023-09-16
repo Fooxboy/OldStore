@@ -26,7 +26,8 @@ message CatalogResponse {
 	int32 id = 1;
 	string name = 2;
 	string title = 3;
-	repeated BlockResponse blocks = 4;
+	bool success = 4;
+	repeated BlockResponse blocks = 5;
 }
 
 message BlockResponse {

@@ -13,6 +13,9 @@ namespace OldStore.API.Controllers
             _catalogsService = catalogsService;
         }
 
+        /// <summary>
+        /// Получить основные каталоги
+        /// </summary>
         [HttpGet("catalogs.getGenerals")]
         public async Task<List<Catalog>> GetCatalogsList()
         {
@@ -21,6 +24,9 @@ namespace OldStore.API.Controllers
             return catalogs;
         }
 
+        /// <summary>
+        /// Получить конкретный каталог по ID
+        /// </summary>
         [HttpGet("catalogs.get")]
         public async Task<Catalog> GetCatalog(int id)
         {

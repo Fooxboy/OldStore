@@ -23,6 +23,7 @@
 
 	<ItemGroup>
 		<Protobuf Include="..\Catalogs\OldStore.Catalogs.API\Protos\catalogs.proto" GrpcServices="Client" />
+		<Protobuf Include="..\Games\OldStore.Games.API\Protos\games.proto" GrpcServices="Client" />
 	</ItemGroup>
 
 </Project>

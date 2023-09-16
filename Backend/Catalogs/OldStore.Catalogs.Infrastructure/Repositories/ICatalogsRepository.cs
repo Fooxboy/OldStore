@@ -9,7 +9,7 @@ namespace OldStore.Catalogs.Infrastructure.Repositories
 {
     public interface ICatalogsRepository
     {
-        public Catalog GetById(int id);
+        public Catalog? GetById(int id);
 
         public List<Catalog> GetGenerals();
 

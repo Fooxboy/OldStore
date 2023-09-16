@@ -13,19 +13,8 @@ namespace OldStore.Services.Shared.Domain
     public abstract class DomainEntity
     {
         int? _requestedHashCode;
-        int _Id;
 
-        public virtual int Id
-        {
-            get
-            {
-                return _Id;
-            }
-            protected set
-            {
-                _Id = value;
-            }
-        }
+        public int Id { get; protected set; }
 
         private List<INotification> _domainEvents;
         public IReadOnlyCollection<INotification> DomainEvents => _domainEvents?.AsReadOnly();

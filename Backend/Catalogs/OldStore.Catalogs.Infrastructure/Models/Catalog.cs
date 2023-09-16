@@ -15,7 +15,9 @@ namespace OldStore.Catalogs.Infrastructure.Models
         public string Name { get;  set; }
 
         public string Title { get;  set; }
+        
+        public CatalogType @Type { get; set; }
 
-        public List<int> BlocksIds { get; set; }
+        public List<Block> Blocks  { get; set; }
     }
 }

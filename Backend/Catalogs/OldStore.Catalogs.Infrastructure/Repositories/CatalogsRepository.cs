@@ -4,24 +4,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using OldStore.Catalogs.Infrastructure.Database;
 
 namespace OldStore.Catalogs.Infrastructure.Repositories
 {
     public class CatalogsRepository : ICatalogsRepository
     {
-        public List<Catalog> GetGenerals()
+        private readonly CatalogsContext _catalogsContext;
+
+        public CatalogsRepository(CatalogsContext catalogsContext)
         {
-            throw new NotImplementedException();
+            _catalogsContext = catalogsContext;
         }
 
-        public Catalog GetById(int id)
+        public List<Catalog> GetGenerals()
         {
-            throw new NotImplementedException();
+            var generalsCatalogs = _catalogsContext.Catalogs.Where(x => x.Type == CatalogType.General);
+
+            return generalsCatalogs.ToList();
+        }
+
+        public Catalog? GetById(int id)
+        {
+            return _catalogsContext.Catalogs
+                .Include(c=> c.Blocks)
+                .FirstOrDefault(c => c.Id == id);
         }
 
         public List<Catalog> GetByIds(params int[] ids)
         {
-            throw new NotImplementedException();
+            return _catalogsContext.Catalogs
+                .Include(c => c.Blocks)
+                .Where(c => ids.Contains(c.Id))
+                .ToList();
         }
     }
 }

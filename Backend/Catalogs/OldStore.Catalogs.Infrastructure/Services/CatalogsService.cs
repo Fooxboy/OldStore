@@ -7,25 +7,21 @@ namespace OldStore.Catalogs.Infrastructure.Services
     public class CatalogsService
     {
         private readonly ICatalogsRepository _catalogsRepository;
-        private readonly IBlocksRepository _blocksRepository;
 
-        public CatalogsService(ICatalogsRepository catalogsRepository, IBlocksRepository blocksRepository)
+        public CatalogsService(ICatalogsRepository catalogsRepository)
         {
             _catalogsRepository = catalogsRepository;
-            _blocksRepository = blocksRepository;
         }
 
-        public Catalog GetById(int id)
+        public Catalog? GetById(int id)
         {
             var catalogDb = _catalogsRepository.GetById(id);
 
+            if (catalogDb is null) return null;
+
             var catalogEntity = catalogDb.CreateDomainEntity();
 
-            var blocksDb = _blocksRepository.GetByIds(catalogDb.BlocksIds.ToArray());
-
-            var blocksEntities = blocksDb.Select(x=> x.CreateDomainEntity()).ToList();
-
-            catalogEntity.SetBlocks(blocksEntities);
+            catalogEntity.SetBlocks(catalogDb.Blocks.CreateDomainEntityList());
 
             return catalogEntity;
         }
@@ -39,15 +35,8 @@ namespace OldStore.Catalogs.Infrastructure.Services
             foreach (var catalog in catalogs)
             {
                 var c = catalog.CreateDomainEntity();
-                var blocksEntities = _blocksRepository
-                    .GetByIds(catalog.BlocksIds.ToArray())
-                    .Select(x=> x.CreateDomainEntity())
-                    .ToList();
-                c.SetBlocks(blocksEntities);
-
                 catalogsEntity.Add(c);
             }
-
 
             return catalogsEntity;
         }

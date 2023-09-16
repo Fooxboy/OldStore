@@ -13,7 +13,5 @@ namespace OldStore.Catalogs.Infrastructure.Database
         public DbSet<Block> Blocks { get; set; }
 
         public DbSet<Catalog> Catalogs { get; set; }
-
-        public DbSet<GeneralSection> GeneralSections { get; set; }
     }
 }

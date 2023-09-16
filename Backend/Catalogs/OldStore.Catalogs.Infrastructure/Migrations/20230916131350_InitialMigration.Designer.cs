@@ -12,7 +12,7 @@ using OldStore.Catalogs.Infrastructure.Database;
 namespace OldStore.Catalogs.Infrastructure.Migrations
 {
     [DbContext(typeof(CatalogsContext))]
-    [Migration("20230618195108_InitialMigration")]
+    [Migration("20230916131350_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -24,6 +24,21 @@ namespace OldStore.Catalogs.Infrastructure.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("BlockCatalog", b =>
+                {
+                    b.Property<int>("BlocksId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("CatalogsId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("BlocksId", "CatalogsId");
+
+                    b.HasIndex("CatalogsId");
+
+                    b.ToTable("BlockCatalog");
+                });
 
             modelBuilder.Entity("OldStore.Catalogs.Infrastructure.Models.Block", b =>
                 {
@@ -64,10 +79,6 @@ namespace OldStore.Catalogs.Infrastructure.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<List<int>>("BlocksIds")
-                        .IsRequired()
-                        .HasColumnType("integer[]");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -76,28 +87,27 @@ namespace OldStore.Catalogs.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
                     b.ToTable("Catalogs");
                 });
 
-            modelBuilder.Entity("OldStore.Catalogs.Infrastructure.Models.GeneralSection", b =>
+            modelBuilder.Entity("BlockCatalog", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
+                    b.HasOne("OldStore.Catalogs.Infrastructure.Models.Block", null)
+                        .WithMany()
+                        .HasForeignKey("BlocksId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("SectionId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Title")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("GeneralSections");
+                    b.HasOne("OldStore.Catalogs.Infrastructure.Models.Catalog", null)
+                        .WithMany()
+                        .HasForeignKey("CatalogsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

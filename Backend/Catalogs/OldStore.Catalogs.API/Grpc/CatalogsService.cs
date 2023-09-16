@@ -19,12 +19,15 @@ namespace OldStore.Catalogs.API.Grpc
         {
             var catalog = _catalogsService.GetById(request.Id);
 
+            if (catalog is null) return new CatalogResponse() { Success = false };
+
             var response = _mapper.Map<CatalogResponse>(catalog);
 
             var blocks = catalog.Blocks.Select(x => _mapper.Map<BlockResponse>(x));
 
             response.Blocks.AddRange(blocks);
 
+            response.Success = true;
             return response;
         }
 
@@ -36,11 +39,12 @@ namespace OldStore.Catalogs.API.Grpc
 
             var catalogs = catalogsEntity.Select(x => _mapper.Map<CatalogResponse>(x)).ToList();
             
-
             for(int i = 0; i < catalogs.Count(); i++)
             {
                 var blocks = catalogsEntity[i].Blocks.Select(x => _mapper.Map<BlockResponse>(x));
                 catalogs[i].Blocks.AddRange(blocks);
+
+                catalogs[i].Success = true;
             }
 
             response.Items.AddRange(catalogs);
