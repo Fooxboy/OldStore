@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Catalogs.Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{671F3E38-4BEC-4B03-AF65-AA97107574EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldStore.Files.API", "Backend\Files\OldStore.Files.API\OldStore.Files.API.csproj", "{5B32A74F-ABCB-4761-A4BA-2752E9E557FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{88611D6A-DBC3-4092-9BD2-A5AC0809077C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88611D6A-DBC3-4092-9BD2-A5AC0809077C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88611D6A-DBC3-4092-9BD2-A5AC0809077C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B32A74F-ABCB-4761-A4BA-2752E9E557FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B32A74F-ABCB-4761-A4BA-2752E9E557FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B32A74F-ABCB-4761-A4BA-2752E9E557FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B32A74F-ABCB-4761-A4BA-2752E9E557FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{1B3E8640-1EE7-4021-AD02-5176B7C9132E} = {940BFB51-46B3-4B8B-A0D2-D4BDA660F128}
 		{88611D6A-DBC3-4092-9BD2-A5AC0809077C} = {940BFB51-46B3-4B8B-A0D2-D4BDA660F128}
 		{671F3E38-4BEC-4B03-AF65-AA97107574EA} = {EAC1A758-2569-42CE-B3B9-0BFA031E6424}
+		{5B32A74F-ABCB-4761-A4BA-2752E9E557FE} = {671F3E38-4BEC-4B03-AF65-AA97107574EA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2691AB8E-1691-453C-846E-EFB9546C356D}

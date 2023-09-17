@@ -1,0 +1,3 @@
+dotnet ef migrations add InitialMigration --context OldStore.Files.API.Database.FilesContext
+
+dotnet ef database update --context OldStore.Files.API.Database.FilesContext
