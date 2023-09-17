@@ -21,5 +21,12 @@ namespace OldStore.Games.Infrastructure.Services
 
             return domainEntities.ToList();
         }
+
+        public async Task<Game?> GetGameById(int id)
+        {
+            var game = _gamesRepository.GetGameById(id);
+
+            return game?.CreateDomainEntity();
+        }
     }
 }

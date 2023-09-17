@@ -8,6 +8,8 @@ namespace OldStore.Shared.Models
 {
     public class Game
     {
+        public int Id { get; private set; }
+        
         public string Title { get; private set; }
 
         public int Year { get; private set; }

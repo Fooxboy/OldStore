@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Catalogs.Domain", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldStore.Catalogs.Infrastructure", "Backend\Catalogs\OldStore.Catalogs.Infrastructure\OldStore.Catalogs.Infrastructure.csproj", "{88611D6A-DBC3-4092-9BD2-A5AC0809077C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{671F3E38-4BEC-4B03-AF65-AA97107574EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +112,7 @@ Global
 		{EEFEF8F7-ECF0-454E-A3DB-6A123D58D133} = {940BFB51-46B3-4B8B-A0D2-D4BDA660F128}
 		{1B3E8640-1EE7-4021-AD02-5176B7C9132E} = {940BFB51-46B3-4B8B-A0D2-D4BDA660F128}
 		{88611D6A-DBC3-4092-9BD2-A5AC0809077C} = {940BFB51-46B3-4B8B-A0D2-D4BDA660F128}
+		{671F3E38-4BEC-4B03-AF65-AA97107574EA} = {EAC1A758-2569-42CE-B3B9-0BFA031E6424}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2691AB8E-1691-453C-846E-EFB9546C356D}

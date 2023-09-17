@@ -1,3 +1,4 @@
+using GrpcGames;
 using OldStore.API.Helpers;
 using OldStore.API.Services;
 
@@ -8,10 +9,16 @@ builder.Services.AddGrpcClient<GrpcCatalogs.Catalogs.CatalogsClient>((s, o) =>
     o.Address = new Uri(builder.Configuration.GetValue<string>("MicroservicesUrls:catalogs"));
 });
 
+builder.Services.AddGrpcClient<GamesGrpc.GamesGrpcClient>((s, o) =>
+{
+    o.Address = new Uri(builder.Configuration.GetValue<string>("MicroservicesUrls:games"));
+});
+
 // Add services to the container.
 
-builder.Services.AddTransient<ICatalogsService, CatalogsService>();
 builder.Services.AddAutoMapper(typeof(GatewayAutoMapperProfile));
+builder.Services.AddTransient<ICatalogsService, CatalogsService>();
+builder.Services.AddTransient<IGamesService, GamesService>();
 
 // Add services to the container.
 builder.Services.AddControllers();

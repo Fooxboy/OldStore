@@ -1,0 +1,3 @@
+dotnet ef migrations add InitialMigration --startup-project ../OldStore.Games.API/OldStore.Games.API.csproj --context OldStore.Games.Infrastructure.Database.GamesContext
+
+dotnet ef database update --startup-project ../OldStore.Games.API/OldStore.Games.API.csproj --context OldStore.Games.Infrastructure.Database.GamesContext

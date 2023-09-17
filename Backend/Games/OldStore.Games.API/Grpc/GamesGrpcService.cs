@@ -28,5 +28,14 @@ namespace OldStore.Games.API.Grpc
 
             return response;
         }
+
+        public override async Task<GameGrpc> GetById(GetByIdRequest request, ServerCallContext context)
+        {
+            var game = await _gameService.GetGameById(request.Id);
+
+            var g = game is null ? new GameGrpc() { Success = false } : _mapper.Map<GameGrpc>(game);
+            return g;
+        }
+
     }
 }

@@ -9,11 +9,11 @@ namespace OldStore.Games.Domain.AggregatesModel.GameAggregate
 
         public int Year { get; private set; }
 
-        public string Description { get; }
+        public string? Description { get; }
 
         public IReadOnlyCollection<GameImage> Images { get; private set; }
 
-        public string Publisher { get; private set; }
+        public string? Publisher { get; private set; }
 
         public IReadOnlyCollection<GameDeveloper> Developers { get; private set; }
 

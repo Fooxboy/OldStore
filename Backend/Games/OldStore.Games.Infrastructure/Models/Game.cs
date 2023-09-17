@@ -13,11 +13,11 @@ namespace OldStore.Games.Infrastructure.Models
 
         public int Year { get; set; }
 
-        public string Description { get; }
+        public string? Description { get; set; }
 
         public List<Image> Images { get; set; }
 
-        public string Publisher { get; set; }
+        public string? Publisher { get; set; }
 
         public List<Developer> Developers { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GrpcCatalogs;
+using GrpcGames;
 using OldStore.Shared.Models;
 
 namespace OldStore.API.Helpers
@@ -10,6 +11,9 @@ namespace OldStore.API.Helpers
         {
             CreateMap<BlockResponse, Block>();
             CreateMap<CatalogResponse, Catalog>().ForMember(dest => dest.Blocks, opt => opt.Ignore());
+            CreateMap<DeveloperGrpc, GameDeveloper>();
+            CreateMap<ImageGrpc, GameImage>();
+            CreateMap<GameGrpc, Game>();
         }
     }
 }

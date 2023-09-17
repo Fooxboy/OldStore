@@ -10,5 +10,7 @@ namespace OldStore.Games.Infrastructure.Repositories
     public interface IGamesRepository
     {
         public List<Game> GetGamesByIds(params int[] ids);
+
+        public Game? GetGameById(int id);
     }
 }
